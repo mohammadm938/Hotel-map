@@ -2,6 +2,7 @@ import { MdLocationOn } from "react-icons/md";
 import { HiCalendar, HiMinus, HiPlus, HiSearch } from "react-icons/hi";
 import { useRef, useState } from "react";
 import useOutsideClick from "../../../hooks/useOutsideClick";
+import { createSearchParams, useNavigate } from "react-router-dom";
 
 // for date range picker
 import "react-date-range/dist/styles.css"; // main style file
@@ -21,6 +22,21 @@ const Header = () => {
   const [date, setDate] = useState([
     { startDate: new Date(), endDate: new Date(), key: "selection" },
   ]);
+
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    const encodedParams = createSearchParams({
+      destination,
+      date: JSON.stringify(date),
+      options: JSON.stringify(options),
+    });
+
+    navigate({
+      pathname: "/hotels",
+      search: encodedParams.toString(),
+    });
+  };
 
   const handleOptions = (name, operation) => {
     setOptions((prev) => {
@@ -81,7 +97,7 @@ const Header = () => {
           <span className="seperator"></span>
         </div>
         <div className="headerSearchItem">
-          <button className="headerSearchBtn">
+          <button className="headerSearchBtn" onClick={handleSearch}>
             <HiSearch className="headerIcon" />
           </button>
         </div>
