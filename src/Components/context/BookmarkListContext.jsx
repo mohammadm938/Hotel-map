@@ -9,7 +9,7 @@ const BASE_URL = "http://localhost:5000";
 function BookmarkListProvider({ children }) {
   const [currentBookmark, setCurrentBookmark] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [bookmarks, setBookmark] = useState(null);
+  const [bookmarks, setBookmark] = useState([]);
 
   useEffect(() => {
     async function fetchBookmarkList() {
@@ -38,6 +38,18 @@ function BookmarkListProvider({ children }) {
     }
   }
 
+  async function deleteBookmark(id) {
+    setIsLoading(true);
+    try {
+      await axios.delete(`${BASE_URL}/bookmarks/${id}`);
+      setBookmark((prev) => prev.filter((item) => item.id !== id));
+    } catch (error) {
+      toast.error(error.message);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
   async function getBookmark(id) {
     setIsLoading(true);
     try {
@@ -58,6 +70,7 @@ function BookmarkListProvider({ children }) {
         currentBookmark,
         getBookmark,
         createBookmark,
+        deleteBookmark,
       }}
     >
       {children}

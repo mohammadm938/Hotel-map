@@ -1325,15 +1325,6 @@
   ],
   "bookmarks": [
     {
-      "cityName": "Abalessa",
-      "country": "Algeria",
-      "countryCode": "DZ",
-      "latitude": "23.18455079512732",
-      "longitude": "3.795523257510883",
-      "host_location": "Abalessa Algeria",
-      "id": 1
-    },
-    {
       "cityName": "Mahidasht",
       "country": "Iran (Islamic Republic of)",
       "countryCode": "IR",
@@ -1352,15 +1343,6 @@
       "id": 5
     },
     {
-      "cityName": "A Dakhla Oasis",
-      "country": "Egypt",
-      "countryCode": "EG",
-      "latitude": "25.02090651422749",
-      "longitude": "29.09059588509316",
-      "host_location": "A Dakhla Oasis Egypt",
-      "id": 7
-    },
-    {
       "cityName": "Baba Kot",
       "country": "Pakistan",
       "countryCode": "PK",
@@ -1377,15 +1359,6 @@
       "longitude": "25.08041381835938",
       "host_location": "Cristuru Secuiesc Romania",
       "id": 9
-    },
-    {
-      "cityName": "Perth",
-      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
-      "countryCode": "GB",
-      "latitude": "56.39504689567507",
-      "longitude": "-3.4098815917968754",
-      "host_location": "Perth United Kingdom of Great Britain and Northern Ireland (the)",
-      "id": 10
     },
     {
       "cityName": "Glasgow",
@@ -1413,15 +1386,6 @@
       "longitude": "51.42288208007813",
       "host_location": "Chalus Iran (Islamic Republic of)",
       "id": 13
-    },
-    {
-      "cityName": "London",
-      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
-      "countryCode": "GB",
-      "latitude": "51.520299877046156",
-      "longitude": "-0.10419845581054689",
-      "host_location": "London United Kingdom of Great Britain and Northern Ireland (the)",
-      "id": 14
     },
     {
       "cityName": "Nowshahr",
