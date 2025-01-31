@@ -17,7 +17,7 @@ const Hotels = () => {
           >
             <div
               className={`searchItem ${
-                currentHotel.id === item.id ? "current-hotel" : ""
+                currentHotel?.id === item.id ? "current-hotel" : ""
               }`}
             >
               <img src={item.xl_picture_url} alt={item.name} />
