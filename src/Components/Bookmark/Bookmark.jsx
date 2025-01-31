@@ -4,9 +4,9 @@ import Loader from "../Loader/Loader";
 import { Link } from "react-router-dom";
 
 function Bookmark() {
-  const { isLoadingBookmark, bookmarks, currentBookmark } = useBookmark();
+  const { isLoading, bookmarks, currentBookmark } = useBookmark();
 
-  if (isLoadingBookmark) return <Loader />;
+  if (isLoading || !bookmarks) return <Loader />;
 
   return (
     <div>

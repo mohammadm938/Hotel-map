@@ -1,5 +1,5 @@
 import useFetch from "../../../hooks/useFetch";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 
@@ -8,18 +8,45 @@ const BASE_URL = "http://localhost:5000";
 
 function BookmarkListProvider({ children }) {
   const [currentBookmark, setCurrentBookmark] = useState(null);
-  const [isLoadingBookmark, setIsLoadingBookmark] = useState(false);
-  const { data: bookmarks, isLoading } = useFetch(`${BASE_URL}/bookmarks`);
+  const [isLoading, setIsLoading] = useState(false);
+  const [bookmarks, setBookmark] = useState(null);
+
+  useEffect(() => {
+    async function fetchBookmarkList() {
+      setIsLoading(true);
+      try {
+        const { data } = await axios.get(`${BASE_URL}/bookmarks`);
+        setBookmark(data);
+      } catch (error) {
+        toast.error(error.message);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    fetchBookmarkList();
+  }, []);
+
+  async function createBookmark(newBookmark) {
+    setIsLoading(true);
+    try {
+      const { data } = await axios.post(`${BASE_URL}/bookmarks`, newBookmark);
+      setBookmark((prev) => [...prev, data]);
+    } catch (error) {
+      toast.error(error.message);
+    } finally {
+      setIsLoading(false);
+    }
+  }
 
   async function getBookmark(id) {
-    setIsLoadingBookmark(true);
+    setIsLoading(true);
     try {
       const { data } = await axios.get(`${BASE_URL}/bookmarks/${id}`);
       setCurrentBookmark(data);
-      setIsLoadingBookmark(false);
     } catch (error) {
       toast.error(error.message);
-      setIsLoadingBookmark(false);
+    } finally {
+      setIsLoading(false);
     }
   }
 
@@ -29,8 +56,8 @@ function BookmarkListProvider({ children }) {
         bookmarks,
         isLoading,
         currentBookmark,
-        isLoadingBookmark,
         getBookmark,
+        createBookmark,
       }}
     >
       {children}

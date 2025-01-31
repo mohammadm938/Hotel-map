@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Loader from "../Loader/Loader";
+import { useBookmark } from "../context/BookmarkListContext";
 
 const BASE_URL = "https://us1.api-bdc.net/data/reverse-geocode-client";
 
@@ -16,6 +17,21 @@ function AddBookmark() {
   const [countryFlagCode, setCountryFlagCode] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const { createBookmark } = useBookmark();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const newBookmark = {
+      cityName,
+      country: countryName,
+      countryCode: countryFlagCode,
+      latitude: lat,
+      longitude: lng,
+      host_location: cityName + " " + countryName,
+    };
+    await createBookmark(newBookmark);
+    navigate("/bookmark");
+  };
 
   useEffect(() => {
     if (!lat || !lng) return;
@@ -50,7 +66,7 @@ function AddBookmark() {
   return (
     <div>
       <h2>Bookmark New Location</h2>
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <div className="formControl">
           <label htmlFor="cityName">CityName</label>
           <input
@@ -86,7 +102,9 @@ function AddBookmark() {
           >
             &larr; Back
           </button>
-          <button className="btn btn--primary">Add</button>
+          <button type="submit" className="btn btn--primary">
+            Add
+          </button>
         </div>
       </form>
     </div>

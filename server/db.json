@@ -1368,6 +1368,87 @@
       "longitude": "67.78003711374224",
       "host_location": "Baba Kot Pakistan",
       "id": 8
+    },
+    {
+      "cityName": "Cristuru Secuiesc",
+      "country": "Romania",
+      "countryCode": "RO",
+      "latitude": "46.2759616642027",
+      "longitude": "25.08041381835938",
+      "host_location": "Cristuru Secuiesc Romania",
+      "id": 9
+    },
+    {
+      "cityName": "Perth",
+      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "countryCode": "GB",
+      "latitude": "56.39504689567507",
+      "longitude": "-3.4098815917968754",
+      "host_location": "Perth United Kingdom of Great Britain and Northern Ireland (the)",
+      "id": 10
+    },
+    {
+      "cityName": "Glasgow",
+      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "countryCode": "GB",
+      "latitude": "55.854311475297216",
+      "longitude": "-4.235229492187501",
+      "host_location": "Glasgow United Kingdom of Great Britain and Northern Ireland (the)",
+      "id": 11
+    },
+    {
+      "cityName": "Laval-sur-Tourbe",
+      "country": "France",
+      "countryCode": "FR",
+      "latitude": "49.14129181445139",
+      "longitude": "4.680175781250001",
+      "host_location": "Laval-sur-Tourbe France",
+      "id": 12
+    },
+    {
+      "cityName": "Chalus",
+      "country": "Iran (Islamic Republic of)",
+      "countryCode": "IR",
+      "latitude": "36.65123151255396",
+      "longitude": "51.42288208007813",
+      "host_location": "Chalus Iran (Islamic Republic of)",
+      "id": 13
+    },
+    {
+      "cityName": "London",
+      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "countryCode": "GB",
+      "latitude": "51.520299877046156",
+      "longitude": "-0.10419845581054689",
+      "host_location": "London United Kingdom of Great Britain and Northern Ireland (the)",
+      "id": 14
+    },
+    {
+      "cityName": "Nowshahr",
+      "country": "Iran (Islamic Republic of)",
+      "countryCode": "IR",
+      "latitude": "36.65178239531191",
+      "longitude": "51.50064468383789",
+      "host_location": "Nowshahr Iran (Islamic Republic of)",
+      "id": 15
+    },
+    {
+      "cityName": "Dannemois",
+      "country": "France",
+      "countryCode": "FR",
+      "latitude": "48.45852264206335",
+      "longitude": "2.49114990234375",
+      "host_location": "Dannemois France",
+      "id": 16
+    },
+    {
+      "cityName": "Golzar",
+      "country": "Iran (Islamic Republic of)",
+      "countryCode": "IR",
+      "latitude": "29.45095858783464",
+      "longitude": "57.2607421875",
+      "host_location": "Golzar Iran (Islamic Republic of)",
+      "id": 17
     }
   ]
 }
