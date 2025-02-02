@@ -1,8 +1,64 @@
-# React + Vite
+# Hotel Map Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This project is a React-based web application that allows users to search for hotels, view them on a map, and bookmark specific locations. The app interacts with a JSON server API to fetch hotel data and includes features such as authentication, filtering, and bookmarking.
 
-Currently, two official plugins are available:
+## Features
+- **Hotel Listings:** Fetches hotel data from an API and displays them on the homepage.
+- **Interactive Map:** Users can select a hotel to view its location on the map.
+- **Bookmarking:** Users can click on any location on the map to bookmark it and add it to their list.
+- **Bookmark Management:** Users can remove bookmarked locations from the related page.
+- **Login Page:** Authentication system for user access.
+- **Search & Filter:** Users can search for hotels based on:
+  - Number of rooms available
+  - Number of adults and children
+  - Hotel names close to the search term
+- **State Management:** Uses React Context and Reducer for managing state.
+- **Protected Routes:** Restricts certain pages to authenticated users.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
+- **React** for building the user interface
+- **React Context & Reducer** for state management
+- **React Router** for navigation and protected routes
+- **Map Integration** for displaying hotel locations and bookmarking
+- **JSON Server** as a mock backend API
+- **Vite** for fast development and build process
+- **ESLint** for code quality and linting
+
+## Installation & Setup
+1. Clone the repository:
+   ```sh
+   git clone <repo-url>
+   cd hotel-map-project
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Start the JSON Server:
+   ```sh
+   npm run server
+   ```
+   Alternatively, you can use:
+   ```sh
+   json-server --watch server/db.json --port 5000 --delay 500
+   ```
+4. Start the React app:
+   ```sh
+   npm run dev
+   ```
+5. To build the project for production:
+   ```sh
+   npm run build
+   ```
+6. To preview the production build:
+   ```sh
+   npm run preview
+   ```
+
+## Contributing
+Feel free to contribute by submitting issues or pull requests. Suggestions for improvements are welcome!
+
+## License
+This project is licensed under the MIT License. This means you are free to use, modify, distribute, and even sell the software, as long as the original license and copyright notice remain intact. It provides flexibility while ensuring that the original creator gets recognition for their work.
+
