@@ -2,6 +2,7 @@
 
 ## Overview
 This project is a React-based web application that allows users to search for hotels, view them on a map, and bookmark specific locations. The app interacts with a JSON server API to fetch hotel data and includes features such as authentication, filtering, and bookmarking.
+Online version : https://hotel-map-nu.vercel.app/
 
 ## Features
 - **Hotel Listings:** Fetches hotel data from an API and displays them on the homepage.
