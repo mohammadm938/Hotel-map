@@ -1,9 +1,16 @@
 import { MdLocationOn } from "react-icons/md";
-import { HiCalendar, HiMinus, HiPlus, HiSearch } from "react-icons/hi";
+import {
+  HiCalendar,
+  HiLogout,
+  HiMinus,
+  HiPlus,
+  HiSearch,
+} from "react-icons/hi";
 import { useRef, useState } from "react";
 import useOutsideClick from "../../../hooks/useOutsideClick";
 import {
   createSearchParams,
+  Link,
   useNavigate,
   useSearchParams,
 } from "react-router-dom";
@@ -11,6 +18,7 @@ import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { DateRange } from "react-date-range";
 import { format } from "date-fns";
+import { useAuthentication } from "../context/AuthenticationProvider";
 
 const Header = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -28,6 +36,7 @@ const Header = () => {
     { startDate: new Date(), endDate: new Date(), key: "selection" },
   ]);
 
+  const { user, isAuth, logout } = useAuthentication();
   const navigate = useNavigate();
 
   const handleSearch = () => {
@@ -55,6 +64,9 @@ const Header = () => {
   return (
     <div className="header">
       <div className="headerSearch">
+        <Link to={"/bookmark"} className="headerSearchItem">
+          Bookmarks
+        </Link>
         <div className="headerSearchItem">
           <MdLocationOn className="headerIcon locationIcon" />
           <input
@@ -105,6 +117,16 @@ const Header = () => {
           <button className="headerSearchBtn" onClick={handleSearch}>
             <HiSearch className="headerIcon" />
           </button>
+        </div>
+        <div className="headerSearchItem">
+          {isAuth ? (
+            <div>
+              <span>{user.name}</span>
+              <HiLogout onClick={logout} className="icon" />
+            </div>
+          ) : (
+            <Link to={"/login"}>Login</Link>
+          )}
         </div>
       </div>
     </div>
