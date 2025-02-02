@@ -60,5 +60,5 @@ This project is a React-based web application that allows users to search for ho
 Feel free to contribute by submitting issues or pull requests. Suggestions for improvements are welcome!
 
 ## License
-This project is licensed under the MIT License. This means you are free to use, modify, distribute, and even sell the software, as long as the original license and copyright notice remain intact. It provides flexibility while ensuring that the original creator gets recognition for their work.
+This project is licensed under the MIT License.
 
