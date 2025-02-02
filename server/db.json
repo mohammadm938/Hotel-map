@@ -1404,15 +1404,6 @@
       "longitude": "2.49114990234375",
       "host_location": "Dannemois France",
       "id": 16
-    },
-    {
-      "cityName": "Golzar",
-      "country": "Iran (Islamic Republic of)",
-      "countryCode": "IR",
-      "latitude": "29.45095858783464",
-      "longitude": "57.2607421875",
-      "host_location": "Golzar Iran (Islamic Republic of)",
-      "id": 17
     }
   ]
 }
